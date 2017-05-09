@@ -1,14 +1,18 @@
+#This heavily rellies on the work of clubelo.com, namely their elo data and calculations
+#Past data for the current season derived from http://www.football-data.co.uk/
+
 library(reshape)
 library("EloRating")
 library(dplyr)
 
 
 #loads the files locally
+#the result file comes from http://www.football-data.co.uk/
 
 
-fixtures<- read.csv("Calendario.csv")
-teams<- read.csv("EquipasPortuguesas.csv")
-results<- read.csv("P1.csv")
+fixtures<- read.csv("Input/Calendario.csv")
+teams<- read.csv("Input/EquipasPortuguesas.csv")
+results<- read.csv("Input/P1.csv")
 
 #Computes the current league standings
 
@@ -86,7 +90,8 @@ fixtures$AScored <- 0
 
 ll <- Sys.time()
 
-#"""generates the EXPECTED goals for the remaining games"""
+#generates the EXPECTED goals for the remaining games
+#The expected goals formula is based on clubelo.com articles
 
 
 
@@ -213,22 +218,22 @@ Ultimo <- (table(Ultimo))
 
 
 
-write.csv(Champion, "Champion.csv")
-write.csv(Second, "Second.csv")
-write.csv(Third, "Third.csv")
-write.csv(Fourth, "Fourth.csv")
-write.csv(Fifth, "Fifth.csv")
-write.csv(sexto, "sexto.csv")
-write.csv(septimo, "septimo.csv")
-write.csv(oitavo, "oitavo.csv")
-write.csv(nono, "nono.csv")
-write.csv(decimo, "decimo.csv")
-write.csv(onze, "onze.csv")
-write.csv(doze, "doze.csv")
-write.csv(treze, "treze.csv")
-write.csv(catorze, "catorze.csv")
-write.csv(quinze, "quinze.csv")
-write.csv(desazzeis, "desazzeis.csv")
-write.csv(Penultimo, "Penultimo.csv")
-write.csv(Ultimo, "Ultimo.csv")
+write.csv(Champion, "Output/Champion.csv")
+write.csv(Second, "Output/Second.csv")
+write.csv(Third, "Output/Third.csv")
+write.csv(Fourth, "Output/Fourth.csv")
+write.csv(Fifth, "Output/Fifth.csv")
+write.csv(sexto, "Output/sexto.csv")
+write.csv(septimo, "Output/septimo.csv")
+write.csv(oitavo, "Output/oitavo.csv")
+write.csv(nono, "Output/nono.csv")
+write.csv(decimo, "Output/decimo.csv")
+write.csv(onze, "Output/onze.csv")
+write.csv(doze, "Output/doze.csv")
+write.csv(treze, "Output/treze.csv")
+write.csv(catorze, "Output/catorze.csv")
+write.csv(quinze, "Output/quinze.csv")
+write.csv(desazzeis, "Output/desazzeis.csv")
+write.csv(Penultimo, "Output/Penultimo.csv")
+write.csv(Ultimo, "Output/Ultimo.csv")
 
